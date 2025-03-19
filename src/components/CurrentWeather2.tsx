@@ -1,6 +1,5 @@
-import React from "react";
 import { Card, CardContent } from "./ui/card";
-import { ArrowDown, ArrowUp, Droplet, Droplets, Wind } from "lucide-react";
+import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
 import { GeocodingResponse, WeatherData } from "@/api/types";
 import Loader2 from "./ui/Loader2";
 import { useTheme } from "@/context/Theme-provider";

@@ -1,8 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoIosFlower } from "react-icons/io";
 import { useTheme } from '../context/Theme-provider';
-import { setHeapSnapshotNearHeapLimit } from 'v8';
 import { Moon, Sun } from 'lucide-react';
 import CitySearch from './CitySearch';
 

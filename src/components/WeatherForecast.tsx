@@ -1,6 +1,5 @@
 import { ForecastData } from '@/api/types'
 import { format } from 'date-fns';
-import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ArrowDown, ArrowUp, Droplets, Wind } from 'lucide-react';
 import Loader2 from './ui/Loader2';
@@ -47,7 +46,7 @@ const WeatherForecast = ({data}: WeatherForecastProps) => {
 
     const formatTemp = (temp: number) => `${Math.round(temp)}°`
 
-     const {theme, setTheme} =  useTheme()
+     const {theme} =  useTheme()
   const isDark = theme === "dark"
 
 

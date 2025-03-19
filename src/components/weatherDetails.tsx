@@ -1,9 +1,6 @@
-import React from 'react'
 import { WeatherData } from '@/api/types'
-import { timeStamp } from 'console'
 import { format } from 'date-fns'
 import { Compass, Gauge, Sunrise, Sunset } from 'lucide-react'
-import { title } from 'process'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import Loader2 from './ui/Loader2'
 import { useTheme } from '@/context/Theme-provider'
@@ -53,7 +50,7 @@ const WeatherDetails = ({data}: WeatherDetailsProps) => {
         },
     ]: null;    
 
-     const {theme, setTheme} =  useTheme()
+     const {theme} =  useTheme()
   const isDark = theme === "dark"
 
   return (
@@ -65,7 +62,7 @@ const WeatherDetails = ({data}: WeatherDetailsProps) => {
           </CardHeader>
           <CardContent>
               <div className='grid gap-6 sm:grid-cols-2'>
-                  {details.map((details)=>{
+                  {details?.map((details)=>{
                       return <div key={details.title} className='flex items-center gap-3 rounded-lg border p-4'>
                           <details.icon className={`h-5 w-5 ${details.color}`} />
                           <div>

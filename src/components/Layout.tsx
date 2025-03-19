@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from 'react'
+import  { PropsWithChildren } from 'react'
 import Header from './Header'
 import { useTheme } from '@/context/Theme-provider'
 
 const Layout = ({children}: PropsWithChildren) => {
-   const {theme, setTheme} =  useTheme()
+   const {theme} =  useTheme()
     const isDark = theme === "dark"
   return (
     <div className='bg-gradient-to-br from-background to-muted'>

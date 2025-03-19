@@ -1,4 +1,3 @@
-import React from "react";
 import { ForecastData } from "@/api/types";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import {
@@ -10,7 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { format } from "date-fns";
-import { Divide, Flag, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useTheme } from "@/context/Theme-provider";
 
 interface HourlyTemperatureProps {
@@ -19,7 +18,7 @@ interface HourlyTemperatureProps {
 
 const HourlyTemperature = ({ data }: HourlyTemperatureProps) => {
 
- const {theme, setTheme} =  useTheme()
+ const {theme} =  useTheme()
   const isDark = theme === "dark"
 
   return (

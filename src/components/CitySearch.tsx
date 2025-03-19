@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from './ui/command'
 import { Button } from './ui/button'
 import { Loader2, Search } from 'lucide-react'
 import { CommandSeparator } from 'cmdk'
 import { useNavigate } from 'react-router-dom'
 import type { Coordinates } from "@/api/types"
-import { Query, useQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query"
 import { weatherAPI } from "@/api/weather"
 
 
@@ -31,7 +31,7 @@ const CitySearch = () => {
 }
 
   const handleSelect = (cityData: string) => {
-    const [lat,lon,name,country] = cityData.split("|")
+    const [lat,lon,name] = cityData.split("|")
     setOpen(false)
     navigate(`/city/${name}?lat=${lat}&lon=${lon}`)
   }

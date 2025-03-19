@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import HourlyTemperature from '@/components/HourlyTemprature'
 import WeatherForecast from '@/components/WeatherForecast'
 import { useParams, useSearchParams } from 'react-router-dom'
