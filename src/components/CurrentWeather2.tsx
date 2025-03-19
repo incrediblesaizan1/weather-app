@@ -12,7 +12,7 @@ import { useTheme } from "@/context/Theme-provider";
 const CurrentWeather2 = ({ data, location}: data) => {
   const formatTemp = (temp: number) => `${Math.round(temp)}°` 
 
-   const {theme, setTheme} =  useTheme()
+   const {theme} =  useTheme()
     const isDark = theme === "dark"
 
   return (
