@@ -1,4 +1,4 @@
-import { ForecastData } from '@/api/types'
+import { ForecastData2 } from '@/api/types'
 import { format } from 'date-fns';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ArrowDown, ArrowUp, Droplets, Wind } from 'lucide-react';
@@ -6,7 +6,7 @@ import Loader2 from './ui/Loader2';
 import { useTheme } from '@/context/Theme-provider';
 
 interface WeatherForecastProps{
-     data: ForecastData;
+     data: ForecastData2;
 }
 
 interface DailyForecast{
@@ -50,9 +50,10 @@ const WeatherForecast = ({data}: WeatherForecastProps) => {
   const isDark = theme === "dark"
 
 
+
   return (
     <>
-    {Object.keys(data) == 0 ? <Loader2 />: (
+    {!data || Object.keys(data).length === 0 ? <Loader2 /> : (
       <Card className={` ${ isDark? "bg-[rgb(37,47,54)]": "bg-[rgb(221,166,203,0.7)]"}`}>
       <CardHeader>
         <CardTitle>5-Day Forecast</CardTitle>

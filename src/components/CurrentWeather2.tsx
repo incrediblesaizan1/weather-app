@@ -27,9 +27,9 @@ const CurrentWeather2 = ({ data, location}: data) => {
                 <h2 className="text-2xl font-bold tracking-tighter">
                   {data?.name}
                 </h2>
-              {location[0]?.state && (
+              {location?.state && (
                   <span className="text-muted-foreground">
-                    , {location[0]?.state}
+                    , {location?.state}
                   </span>
              )}
               </div>

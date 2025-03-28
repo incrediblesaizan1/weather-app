@@ -4,6 +4,9 @@ import WeatherForecast from '@/components/WeatherForecast'
 import { useParams, useSearchParams } from 'react-router-dom'
 import CurrentWeather2 from '@/components/CurrentWeather2'
 import WeatherDetails from '@/components/weatherDetails'
+import { ForecastData2, WeatherData } from '@/api/types'
+import Loader2 from '@/components/ui/Loader2'
+
 
 const City = () => {
 
@@ -12,8 +15,9 @@ const City = () => {
   const lat = parseFloat(searchParams.get("lat") || "0")
   const lon = parseFloat(searchParams.get("lon") || "0")
 
-  const [weatherReport, setWeatherReport] = useState({})
-  const [forcast, setForcast] = useState({})
+
+  const [weatherReport, setWeatherReport] = useState<WeatherData | null>(null);
+  const [forcast, setForcast] = useState<ForecastData2 | null>(null);
   const [location,setLocation] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -36,25 +40,24 @@ setLoading(false)
       }, [params])  
 
 
-
   return (
     <>
      {loading? "..loading": (
        <div className="space-y-4">
        <div className="flex items-center justify-between">
-         <h1 className="text-xl font-bold tracking-tighter">{weatherReport.name}</h1>
+         <h1 className="text-xl font-bold tracking-tighter">{weatherReport?.name}</h1>
        </div>
    
        <div className="grid gap-6">
          <div className="flex flex-col lg:flex-row gap-4">
-       <CurrentWeather2 data={weatherReport} location={location}/>
+       { weatherReport ? <CurrentWeather2 data={weatherReport} location={location[0]}/> : <Loader2 />}
    
-         <HourlyTemperature data={forcast} />
+         { forcast ? <HourlyTemperature data={forcast} /> : <Loader2 />}
          </div>
    
          <div className="grid gap-6 md:grid-cols-2 ">
-           <WeatherDetails data={weatherReport} />
-           <WeatherForecast data={forcast}  />
+         { weatherReport ?  <WeatherDetails data={weatherReport} /> : <Loader2 />}
+         { forcast ? <WeatherForecast data={forcast}  /> : <Loader2 />}
          </div>
        </div>
    

@@ -51,6 +51,32 @@ export interface ForecastData {
     }
 }
 
+export interface ForecastData2 {
+    list : Array<{
+        dt: number;
+        main: WeatherData["main"];
+        weather: WeatherData["weather"];
+        wind: WeatherData["wind"];
+        dt_txt: string;
+    }>
+    cod: number,
+    message: number,
+    cnt: number,
+    city: {
+        id: number,
+        name: string,
+        coord: {
+            lat: number,
+            lon: number
+        },
+        country: string,
+        population: number,
+        timezone: number,
+        sunrise: number,
+        sunset: number
+    },
+}
+
 export interface GeocodingResponse {
     name: string;
     local_names?: Record<string, string>;
