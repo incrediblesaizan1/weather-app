@@ -11,7 +11,7 @@ const Header = () => {
         <header className={`sticky supports-[backdrop-filter]:${ !isDark && "bg-[rgba(30,45,45,0.6)]"} top-0 z-50 w-full ${ !isDark && "bg-[rgba(30,45,45,0.6)]"}  backdrop-blur px-2`}>
             <div className='container mx-auto flex h-20 items-center justify-between pr-4  '>
                 <Link to={"/"} className='flex items-center gap-1'>
-               <IoIosFlower className=' text-4xl md:text-7xl text-[#52ced6]' /> <span className=' text-2xl md:text-4xl lotex'>SK'sky</span> 
+               <IoIosFlower className=' text-5xl md:text-7xl text-[#52ced6]' /> <span className=' text-2xl md:text-4xl lotex'>SK'sky</span> 
                 </Link>
 
 <div className='flex items-center gap-5'>
