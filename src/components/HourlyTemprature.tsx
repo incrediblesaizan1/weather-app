@@ -30,7 +30,7 @@ const HourlyTemperature = ({ data }: HourlyTemperatureProps) => {
      </CardHeader>
      <CardContent>
        <div className="h-[200px] w-full">
-         <ResponsiveContainer width="100%" height="100%">
+         <ResponsiveContainer width="100%" height="100%" className={`relative -left-6 `}>
            <LineChart data={data.list.slice(0, 8).map((item) => ({
     time: format(new Date(item.dt * 1000), "ha"),
     temp: Math.round(item.main.temp),
